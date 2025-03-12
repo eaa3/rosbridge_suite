@@ -112,7 +112,8 @@ async def _set_param(node_name: str, name: str, value: str, parameter_type=None)
     parameter = Parameter()
     parameter.name = name
     if parameter_type is None:
-        parameter.value = Parameter.get_parameter_value(string_value=value)
+        parameter.value = ParameterValue(string_value=value)
+        pass
     else:
         parameter.value = ParameterValue()
         parameter.value.type = parameter_type
